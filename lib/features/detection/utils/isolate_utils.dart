@@ -3,8 +3,8 @@ import 'dart:isolate';
 
 import 'package:camera/camera.dart';
 import 'package:image/image.dart' as imageLib;
-import 'package:quickfix/core/tflite/classifier.dart';
-import 'package:quickfix/core/utils/image_utils.dart';
+import 'package:quickfix/features/detection/tflite/classifier.dart';
+import 'package:quickfix/features/detection/utils/image_utils.dart';
 import 'package:tflite_flutter/tflite_flutter.dart';
 
 /// Manages separate Isolate instance for inference

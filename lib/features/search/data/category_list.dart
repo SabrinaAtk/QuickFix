@@ -1,4 +1,4 @@
-import 'package:quickfix/features/homescreen/domain/category_model.dart';
+import 'package:quickfix/features/search/domain/category_model.dart';
 List<CategoryModel> getCategories(){
 
   List<CategoryModel> myCategories = List<CategoryModel>();

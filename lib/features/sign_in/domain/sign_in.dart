@@ -55,13 +55,14 @@ class _SignInState extends State<SignIn> {
       alignment: Alignment.bottomCenter,
       children: [
         Container(
+          color: Colors.grey[300].withOpacity(0.8),
           padding: EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
             children: <Widget>[
               Text(
                 'SIGN IN',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 26.0,
                   fontWeight: FontWeight.w600,
                 ),
@@ -78,19 +79,19 @@ class _SignInState extends State<SignIn> {
                 decoration: InputDecoration(
                   enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
-                    color: Colors.white,
+                    color: Colors.black,
                   )),
                   hintText: 'Enter Email',
-                  hintStyle: TextStyle(color: Colors.white.withOpacity(0.6)),
-                  focusColor: Colors.white,
+                  hintStyle: TextStyle(color: Colors.black.withOpacity(0.9)),
+                  focusColor: Colors.black,
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                   ),
                 ),
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 22.0,
                 ),
               ),
@@ -107,19 +108,19 @@ class _SignInState extends State<SignIn> {
                 decoration: InputDecoration(
                   enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
-                    color: Colors.white,
+                    color: Colors.black,
                   )),
                   hintText: 'Password',
-                  hintStyle: TextStyle(color: Colors.white.withOpacity(0.6)),
-                  focusColor: Colors.white,
+                  hintStyle: TextStyle(color: Colors.black.withOpacity(0.9)),
+                  focusColor: Colors.black,
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                   ),
                 ),
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 22.0,
                 ),
               ),
@@ -138,7 +139,7 @@ class _SignInState extends State<SignIn> {
                     horizontal: 34.0,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.black,
                     borderRadius: BorderRadius.circular(
                       30.0,
                     ),
@@ -160,15 +161,21 @@ class _SignInState extends State<SignIn> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Container(
-                    padding: EdgeInsets.all(20.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(
-                        30.0,
-                      ),
-                    ),
-                  ),
+                  // Container(
+                   
+                  //   padding: EdgeInsets.all(20.0),
+                  //   decoration: BoxDecoration(
+                  //     image: DecorationImage(
+                  //           image: AssetImage(
+                  //               'assets/images/google-logo.png'),
+                  //           fit: BoxFit.fill,
+                  //         ),
+                  //     color: Colors.black,
+                  //     borderRadius: BorderRadius.circular(
+                  //       30.0,
+                  //     ),
+                  //   ),
+                  // ),
                   SizedBox(
                     width: 38.0,
                   ),
@@ -180,7 +187,7 @@ class _SignInState extends State<SignIn> {
               Text(
                 'FORGOT PASSWORD?',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 16.0,
                   fontWeight: FontWeight.bold,
                   decoration: TextDecoration.underline,
@@ -192,7 +199,7 @@ class _SignInState extends State<SignIn> {
         Container(
           width: double.infinity,
           padding: EdgeInsets.all(30.0),
-          color: Colors.black.withOpacity(0.2),
+          color: Colors.black.withOpacity(0.9),
           child: Text(
             'DON\'T HAVE AN ACCOUNT? SIGN UP',
             textAlign: TextAlign.center,

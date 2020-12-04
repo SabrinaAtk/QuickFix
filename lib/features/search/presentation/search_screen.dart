@@ -1,10 +1,10 @@
-
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:quickfix/features/homescreen/domain/recipe_model.dart';
+import 'package:quickfix/features/home_screen/domain/recipe_model.dart';
 import 'package:quickfix/features/search/data/key.dart';
-import 'package:quickfix/features/homescreen/presentation/home_screen.dart';
+import 'package:quickfix/features/search/domain/recipe_category.dart';
+import 'package:quickfix/features/search/presentation/recipe_view.dart';
 
 class Search extends StatefulWidget {
   @override
@@ -75,7 +75,7 @@ class _SearchState extends State<Search> {
                   Expanded(
                     child: TextField(
                       controller: textEditingController,
-                      decoration: InputDecoration(hintText: "enter"),
+                      decoration: InputDecoration(hintText: "Enter Food To Search"),
                     ),
                   ),
                   SizedBox(
@@ -91,6 +91,100 @@ class _SearchState extends State<Search> {
               recipeGrid()
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+
+class RecipeTile extends StatelessWidget {
+  final String label, source, imgUrl, recipeDetailsUrl;
+  RecipeTile(
+      {@required this.imgUrl,
+      @required this.label,
+      @required this.recipeDetailsUrl,
+      @required this.source});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => RecipeDetails(recipeDetailsUrl)));
+      },
+      child: Container(
+        child: Stack(children: [
+          Image.network(imgUrl),
+          Container(
+            color: Colors.orange[300],
+            height: 50,
+            width: double.infinity,
+            child: Column(
+              children: [
+                SizedBox(height: 5),
+                Text(
+                  label,
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.w600),
+                ),
+                Text(
+                  source,
+                  style: TextStyle(color: Colors.white),
+                )
+              ],
+            ),
+          ),
+        ]),
+      ),
+    );
+  }
+}
+
+class CategoryRecipe extends StatefulWidget {
+
+  final String rCategory;
+
+  CategoryRecipe({this.rCategory});
+
+  @override
+  _CategoryRecipeState createState() => _CategoryRecipeState();
+}
+
+class _CategoryRecipeState extends State<CategoryRecipe> {
+  var rlist;
+  bool _loading = true;
+
+  @override
+  void initState() {
+    getRecipes();
+    // TODO: implement initState
+    super.initState();
+  }
+
+  void getRecipes() async {
+    RecipeForCategory r = RecipeForCategory();
+    await r.getRecipeForCategory(widget.rCategory);
+    rlist = r.r;
+    setState(() {
+      _loading = false;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      
+      body: _loading ? Center(
+        child: CircularProgressIndicator(),
+      ) : SingleChildScrollView(
+        child: Container(
+            child: Container(
+              margin: EdgeInsets.only(top: 16),
+              
+            ),
         ),
       ),
     );

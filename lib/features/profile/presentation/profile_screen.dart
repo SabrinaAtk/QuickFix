@@ -6,7 +6,7 @@ import 'package:quickfix/core/size_config.dart';
 class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
+    
     return Scaffold(
       appBar: buildAppBar(),
       body: Body(),
@@ -15,12 +15,13 @@ class ProfileScreen extends StatelessWidget {
   }
 
   AppBar buildAppBar() {
+    
     return AppBar(
-      backgroundColor: kPrimaryColor,
+      backgroundColor: Colors.orange,
       leading: SizedBox(),
       // On Android it's false by default
       centerTitle: true,
-      title: Text("Profile"),
+      title: Text("My Profile"),
       actions: <Widget>[
         FlatButton(
           onPressed: () {},

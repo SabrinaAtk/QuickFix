@@ -1,21 +1,45 @@
 import 'package:flutter/widgets.dart';
 
 class SizeConfig {
-  static MediaQueryData _mediaQueryData;
-  static double screenWidth;
-  static double screenHeight;
+  static double _screenWidth;
+  static double _screenHeight;
+  static double _blockSizeHorizontal = 0;
+  static double _blockSizeVertical = 0;
   static double defaultSize;
-  static Orientation orientation;
 
-  void init(BuildContext context) {
-    _mediaQueryData = MediaQuery.of(context);
-    screenWidth = _mediaQueryData.size.width;
-    screenHeight = _mediaQueryData.size.height;
-    orientation = _mediaQueryData.orientation;
-    // On iPhone 11 the defaultSize = 10 almost
-    // So if the screen size increase or decrease then our defaultSize also vary
-    defaultSize = orientation == Orientation.landscape
-        ? screenHeight * 0.024
-        : screenWidth * 0.024;
+  static double textMultiplier;
+  static double imageSizeMultiplier;
+  static double heightMultiplier;
+  static double widthMultiplier;
+  static bool isPortrait = true;
+  static bool isMobilePortrait = false;
+
+  void init(BoxConstraints constraints, Orientation orientation) {
+    if (orientation == Orientation.portrait) {
+      _screenWidth = constraints.maxWidth;
+      _screenHeight = constraints.maxHeight;
+      isPortrait = true;
+      if (_screenWidth < 450) {
+        isMobilePortrait = true;
+      }
+    } else {
+      _screenWidth = constraints.maxHeight;
+      _screenHeight = constraints.maxWidth;
+      isPortrait = false;
+      isMobilePortrait = false;
+    }
+defaultSize = orientation == Orientation.landscape
+        ? _screenHeight * 0.024
+        : _screenWidth * 0.024;
+    _blockSizeHorizontal = _screenWidth / 100;
+    _blockSizeVertical = _screenHeight / 100;
+
+    textMultiplier = _blockSizeVertical;
+    imageSizeMultiplier = _blockSizeHorizontal;
+    heightMultiplier = _blockSizeVertical;
+    widthMultiplier = _blockSizeHorizontal;
+
+    print(_blockSizeHorizontal);
+    print(_blockSizeVertical);
   }
 }

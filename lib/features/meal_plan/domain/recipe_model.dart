@@ -11,7 +11,7 @@ class Recipe {
 
   factory Recipe.fromMap(Map<String, dynamic> map) {
     return Recipe(
-      spoonacularSourceUrl: map['spoonacularSourceUrl'],
+      spoonacularSourceUrl: map['https://api.spoonacular.com'],
     );
   }
 }

@@ -3,11 +3,11 @@ import 'dart:isolate';
 
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:quickfix/core/tflite/classifier.dart';
-import 'package:quickfix/core/tflite/recognition.dart';
-import 'package:quickfix/core/tflite/stats.dart';
-import 'package:quickfix/core/ui/camera_view_singleton.dart';
-import 'package:quickfix/core/utils/isolate_utils.dart';
+import 'package:quickfix/features/detection/tflite/classifier.dart';
+import 'package:quickfix/features/detection/tflite/recognition.dart';
+import 'package:quickfix/features/detection/tflite/stats.dart';
+import 'package:quickfix/features/detection/ui/camera_view_singleton.dart';
+import 'package:quickfix/features/detection/utils/isolate_utils.dart';
 
 /// [CameraView] sends each frame for inference
 class CameraView extends StatefulWidget {

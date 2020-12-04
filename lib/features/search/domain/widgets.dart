@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quickfix/features/homescreen/presentation/recipe_view.dart';
+import 'package:quickfix/features/search/presentation/recipe_view.dart';
 
 Widget MyAppBar(){
   return AppBar(
@@ -9,11 +9,11 @@ Widget MyAppBar(){
         Text(
           "Quick",
           style:
-          TextStyle(color: Colors.black87, fontWeight: FontWeight.w600),
+          TextStyle(color: Colors.orange[300], fontWeight: FontWeight.w600),
         ),
         Text(
           "Fix",
-          style: TextStyle(color: Colors.blue, fontWeight: FontWeight.w600),
+          style: TextStyle(color: Colors.brown, fontWeight: FontWeight.w600),
         )
       ],
     ),
@@ -32,11 +32,11 @@ class RecipeTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.push(context, MaterialPageRoute(
-            builder: (context) => RecipeDetails(
-               finalUrl: recipeurl,
-            )
-        ));
+        // Navigator.push(context, MaterialPageRoute(
+        //     builder: (context) => RecipeDetails(
+        //        finalUrl: recipeurl,
+        //     )
+        // ));
       },
       child: Container(
           margin: EdgeInsets.only(bottom: 24),

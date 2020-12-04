@@ -1,3 +1,5 @@
+
+
 class Meal {
   final int id;
   final String title;
@@ -13,7 +15,7 @@ class Meal {
     return Meal(
       id: map['id'],
       title: map['title'],
-      imageUrl: 'https://spoonacular.com/recipeImages/' + map['image'],
+      imageUrl: 'https://spoonacular.com' + map['image'],
     );
   }
 }

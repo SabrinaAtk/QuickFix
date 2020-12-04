@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:quickfix/core/tflite/recognition.dart';
-import 'package:quickfix/core/tflite/stats.dart';
-import 'package:quickfix/core/ui/box_widget.dart';
-import 'package:quickfix/core/ui/camera_view_singleton.dart';
+import 'package:quickfix/features/detection/tflite/recognition.dart';
+import 'package:quickfix/features/detection/tflite/stats.dart';
+import 'package:quickfix/features/detection/ui/box_widget.dart';
+import 'package:quickfix/features/detection/ui/camera_view_singleton.dart';
 
 import 'camera_view.dart';
 
@@ -27,8 +27,7 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: Colors.yellow,
-      body: Stack(
+        body: Stack(
         children: <Widget>[
           // Camera View
           CameraView(resultsCallback, statsCallback),
@@ -41,15 +40,7 @@ class _HomeViewState extends State<HomeView> {
             alignment: Alignment.topLeft,
             child: Container(
               padding: EdgeInsets.only(top: 20),
-              child: Text(
-                'Object Detection Flutter',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.deepOrangeAccent.withOpacity(0.6),
-                ),
-              ),
+             
             ),
           ),
 

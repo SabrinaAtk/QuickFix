@@ -57,13 +57,14 @@ class _CreateLoginState extends State<CreateLogin> {
     return Form(
       key: formKey,
       child: Container(
+        color: Colors.grey[300].withOpacity(0.8),
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
           children: <Widget>[
             Text(
               'CREATE YOUR LOGIN',
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontSize: 26.0,
                 fontWeight: FontWeight.w600,
               ),
@@ -101,23 +102,23 @@ class _CreateLoginState extends State<CreateLogin> {
               },
               decoration: InputDecoration(
                 errorStyle: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
                 enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
-                  color: Colors.white,
+                  color: Colors.black,
                 )),
                 hintText: 'Enter Email',
-                hintStyle: TextStyle(color: Colors.white.withOpacity(0.6)),
-                focusColor: Colors.white,
+                hintStyle: TextStyle(color: Colors.black.withOpacity(0.9)),
+                focusColor: Colors.black,
                 focusedBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
               ),
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontSize: 22.0,
               ),
             ),
@@ -144,23 +145,23 @@ class _CreateLoginState extends State<CreateLogin> {
               obscureText: true,
               decoration: InputDecoration(
                 errorStyle: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
                 enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
-                  color: Colors.white,
+                  color: Colors.black,
                 )),
                 hintText: 'Password',
-                hintStyle: TextStyle(color: Colors.white.withOpacity(0.6)),
-                focusColor: Colors.white,
+                hintStyle: TextStyle(color: Colors.black.withOpacity(0.9)),
+                focusColor: Colors.black,
                 focusedBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
               ),
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontSize: 22.0,
               ),
             ),
@@ -184,23 +185,23 @@ class _CreateLoginState extends State<CreateLogin> {
               obscureText: true,
               decoration: InputDecoration(
                 errorStyle: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
                 enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
-                  color: Colors.white,
+                  color: Colors.black,
                 )),
                 hintText: 'Re-Enter Password',
-                hintStyle: TextStyle(color: Colors.white.withOpacity(0.6)),
-                focusColor: Colors.white,
+                hintStyle: TextStyle(color: Colors.black.withOpacity(0.9)),
+                focusColor: Colors.black,
                 focusedBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
               ),
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontSize: 22.0,
               ),
             ),
@@ -234,7 +235,7 @@ class _CreateLoginState extends State<CreateLogin> {
                   child: Text(
                     'CANCEL',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
                     ),
@@ -259,7 +260,7 @@ class _CreateLoginState extends State<CreateLogin> {
                       horizontal: 34.0,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Colors.black,
                       borderRadius: BorderRadius.circular(
                         30.0,
                       ),

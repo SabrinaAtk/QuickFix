@@ -18,9 +18,7 @@ class MenuFrame extends StatelessWidget {
     return Stack(
       children: <Widget>[
         Material(
-          color: Colors.transparent,
           child: Container(
-            color: Colors.transparent,
             child: Column(
               children: <Widget>[
                 SafeArea(
@@ -96,6 +94,13 @@ class MenuFrame extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+            decoration: BoxDecoration(
+              color: Colors.orange[300],
+              image: DecorationImage(
+                image: AssetImage("assets/images/image_camera.png"),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ),
