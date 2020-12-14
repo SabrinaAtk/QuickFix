@@ -27,7 +27,8 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-        body: Stack(
+      
+      body: Stack(
         children: <Widget>[
           // Camera View
           CameraView(resultsCallback, statsCallback),
@@ -40,7 +41,15 @@ class _HomeViewState extends State<HomeView> {
             alignment: Alignment.topLeft,
             child: Container(
               padding: EdgeInsets.only(top: 20),
-             
+              child: Text(
+                'Object Detection Flutter',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.deepOrangeAccent.withOpacity(0.6),
+                ),
+              ),
             ),
           ),
 

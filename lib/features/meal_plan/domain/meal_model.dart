@@ -15,7 +15,7 @@ class Meal {
     return Meal(
       id: map['id'],
       title: map['title'],
-      imageUrl: 'https://spoonacular.com' + map['image'],
+      imageUrl: 'https://api.spoonacular.com/mealplanner/generate?timeFrame=day' + map['image'],
     );
   }
 }
