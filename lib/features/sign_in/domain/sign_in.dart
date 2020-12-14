@@ -16,17 +16,19 @@ class _SignInState extends State<SignIn> {
   final FlutterSecureStorage storage = FlutterSecureStorage();
   String email, password;
 
+  bool loading = false;
 
   @override
   void initState() {
     super.initState();
   }
 
-  void _signIn({String em, String, pw}) {
+  void _signIn({String em, String pw}) {
     _auth
         .signInWithEmailAndPassword(email: em, password: pw)
         .then((authResult) {
           Navigator.pushNamed(context, '/home');
+          
       }).catchError((err) {
       print(err.code);
       if (err.code == 'ERROR_WRONG_PASSWORD') {
@@ -73,6 +75,7 @@ class _SignInState extends State<SignIn> {
               TextField(
                 onChanged: (textVal) {
                   setState(() {
+                    
                     email = textVal;
                   });
                 },
@@ -130,6 +133,7 @@ class _SignInState extends State<SignIn> {
               ),
               InkWell(
                 onTap: () {
+                  loading =  true;
                   _signIn(em: email, pw: password);
                 },
                 child: Container(

@@ -41,7 +41,7 @@ class RecipePage extends StatelessWidget {
                       new InkWell(
                           child: new Text('Open Full Recipe',
                               style: new TextStyle(
-                                  color: Colors.blue,
+                                  color: Colors.orange,
                                   decoration: TextDecoration.underline)),
                           onTap: () => _launchURL(snapshot.data.sourceUrl)),
                       Container(

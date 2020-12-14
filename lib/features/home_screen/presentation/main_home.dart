@@ -145,7 +145,6 @@ class Main extends  StatefulWidget {
 }
 
 class _MainState extends State<Main> {
-
 Future<List<Recipe>> _getRecipe() async {
 
 var url = "https://api.spoonacular.com/recipes/random?number=20";

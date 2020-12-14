@@ -14,16 +14,15 @@ class MakeCall{
   Future<List<RecipeDetailListItem>> firebaseCalls (DatabaseReference databaseReference) async{
     RecipeList recipeList;
         DataSnapshot dataSnapshot = await databaseReference.once();
-        Map<dynamic,dynamic> jsonResponse=dataSnapshot.value[0]['content'];
+        Map<dynamic,dynamic> jsonResponse=dataSnapshot.value[0]['name'];
         recipeList = new RecipeList.fromJSON(jsonResponse);
-        print(recipeList);
+        print('recipeList');
         listItems.addAll(recipeList.recipeList);
           for(var i in recipeList.recipeList){
             listItems.addAll(recipeList.recipeList);
           }
-         // print(recipeList.recipeList[1].foodtitle);
+         // print(recipeList.recipeList[1].name);
           print('That ${listItems[0].name}');
-//        return recipeList.recipeList;
     return listItems;
     }
   }

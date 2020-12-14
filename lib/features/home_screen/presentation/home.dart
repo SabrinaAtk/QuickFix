@@ -18,6 +18,12 @@ import 'package:quickfix/features/search/data/key.dart';
 import 'dart:async';
 import 'package:webview_flutter/webview_flutter.dart';
 
+
+import 'package:camera/camera.dart';
+import 'package:quickfix/features/detection/ui/home_view.dart';
+
+
+
 class Home extends StatefulWidget {
   Home({Key key, this.title}) : super(key: key);
 

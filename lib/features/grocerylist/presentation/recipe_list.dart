@@ -19,7 +19,7 @@ class ListState extends State<List>{
   @override
   Widget build(BuildContext context) {
 
-    var futureBuilder=new FutureBuilder(
+     FutureBuilder(
       future: makecall.firebaseCalls(databaseReference), // async work
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         switch (snapshot.connectionState) {
